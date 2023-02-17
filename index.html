@@ -13,9 +13,10 @@
       <button
         @click="emailsArray = []; arrayIsCreated = false; getEmailsArray()"
       >
-        Get 10 Emails
+        Get {{emailsArrayLength}} Emails
       </button>
-      <ul v-show="emailsArray.length == 10">
+      <input type="text" v-model="emailsArrayLength" />
+      <ul v-show="arrayIsCreated == true">
         <li v-for="email in emailsArray">{{email}}</li>
       </ul>
     </div>
