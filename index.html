@@ -21,12 +21,13 @@
       <div id="app">
         <div class="input" v-show="inputDisplay">
           <button
-            @click="emailsArray = []; arrayIsCreated = false; getEmailsArray(); responseTime(); inputDisplay = false"
+            @click="(emailsArrayLength != '') ? (emailsArray = [], arrayIsCreated = false, getEmailsArray(), responseTime(), inputDisplay = false) : inputDisplay = true"
           >
             <i class="fa-solid fa-chevron-right"></i>
           </button>
           <input
             type="text"
+            @keyup.enter="(emailsArrayLength != '') ? (emailsArray = [], arrayIsCreated = false, getEmailsArray(), responseTime(), inputDisplay = false) : inputDisplay = true"
             v-model="emailsArrayLength"
             placeholder="Quante mail vuoi creare?"
           />
