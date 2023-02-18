@@ -42,7 +42,10 @@
         </div>
         <div class="results" v-show="arrayIsCreated == true">
           <ul>
-            <li v-for="email in emailsArray">{{email}}</li>
+            <li v-for="(email, index) in emailsArray" @click="copyMail(index)">
+              <h4>{{email}}</h4>
+              <i class="fa-regular fa-clipboard"></i>
+            </li>
           </ul>
           <hr />
           <h4>

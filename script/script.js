@@ -9,6 +9,7 @@ const { createApp } = Vue
         arrayIsCreated: false,
         inputDisplay: true,
         email: '',
+        copyText: '',
       }
     },
     mounted() {
@@ -28,6 +29,11 @@ const { createApp } = Vue
         responseTime() {
             this.ms = 0
             let timer = setInterval(()=> (this.arrayIsCreated != true) ? this.ms++ : (clearInterval(timer), this.loadingDisplay = false), 1)
-        }
+            },
+        copyMail(index) {
+            this.copyText = this.emailsArray[index]
+            navigator.clipboard.writeText(this.copyText);
+          }
       }
   }).mount('#app')
+  
