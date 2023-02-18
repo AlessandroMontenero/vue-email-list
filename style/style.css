@@ -104,7 +104,7 @@ li .fa-clipboard {
 li:hover .fa-clipboard {
     display: block;
     position: absolute;
-    opacity: .85;
+    opacity: .8;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
