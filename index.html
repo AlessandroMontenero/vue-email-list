@@ -4,21 +4,51 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./style/style.css" />
     <title>vue-email-list</title>
   </head>
   <body>
-    <div id="app">
-      <button
-        @click="emailsArray = []; arrayIsCreated = false; getEmailsArray()"
-      >
-        Get {{emailsArrayLength}} Emails
-      </button>
-      <input type="text" v-model="emailsArrayLength" />
-      <ul v-show="arrayIsCreated == true">
-        <li v-for="email in emailsArray">{{email}}</li>
-      </ul>
+    <div class="container">
+      <div id="app">
+        <div class="input" v-show="inputDisplay">
+          <button
+            @click="emailsArray = []; arrayIsCreated = false; getEmailsArray(); responseTime(); inputDisplay = false"
+          >
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <input
+            type="text"
+            v-model="emailsArrayLength"
+            placeholder="Quante mail vuoi creare?"
+          />
+        </div>
+        <div
+          class="loading"
+          v-show="inputDisplay != true && arrayIsCreated != true"
+        >
+          <div class="progress-bar">
+            <div class="circle border"></div>
+          </div>
+        </div>
+        <div class="results" v-show="arrayIsCreated == true">
+          <ul>
+            <li v-for="email in emailsArray">{{email}}</li>
+          </ul>
+          <hr />
+          <h4>
+            Tutte le richieste sono state completate in {{ms}} millisecondi.
+          </h4>
+        </div>
+      </div>
     </div>
 
     <!-- Axios -->

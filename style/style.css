@@ -1,0 +1,136 @@
+body {
+    background-color: rgb(214, 204, 194);
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input {
+    width: 300px;
+    height: 3rem;
+    background-color: white;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    position: relative;
+}
+
+button {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30%;
+    border-radius: 50px 0 0 50px;
+    border: 0;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+input {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 70%;
+    border-radius: 0 50px 50px 0;
+    border: 0;
+    box-sizing: border-box;
+    text-align: right;
+    padding-right: 30px;
+}
+
+.results {
+    max-width: 60%;
+    background: white;
+    padding: 2rem;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+hr {
+    width: 60%;
+    margin: 1rem 0 ;
+}
+
+h4 {
+    margin: 0;
+    opacity: .7;
+    font-weight: 400;
+}
+
+.results ul {
+    list-style-type: none;
+    text-align: center;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.results li {
+    margin: 5px;
+    padding: 4px 6px;
+    border-radius: 10px;
+    border: 1px solid black;
+    opacity: .7;
+    transition: opacity 0.2s linear;
+}
+
+.results li:hover {
+    opacity: 1;
+}
+
+.progress-bar {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform: translate(-15px, 0);
+}
+
+.circle {
+  height: 50%;
+  right: 0px;
+  position: absolute;
+  border: solid 5px  #a9a9a9;
+  border-top-color:  rgb(104, 97, 92);
+  border-radius: 50%;
+}
+
+.border {
+  width: 50%;
+  transform: rotate(135deg);  
+  animation: spin 1.3s steps(2) .2s infinite;
+  -webkit-animation: spin 1.3s linear infinite;
+
+}
+
+
+@-webkit-keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
